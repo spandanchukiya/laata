@@ -25,7 +25,7 @@ SECRET_KEY = 'iyi!fzo9xmn(2#qr7q7s4(0g3qu*x-^-_hxxoz*7tyae^2av_n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', 'spandanchukiya.pythonanywhere.com']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'categories'		
+    'categories',
+    'products'
 ]
 
 MIDDLEWARE = [
@@ -76,9 +77,16 @@ WSGI_APPLICATION = 'laata.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   # }
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'spandanchukiya$laata',
+        'USER': 'spandanchukiya',
+        'PASSWORD': 'gogreen@246',
+        'HOST': 'spandanchukiya.mysql.pythonanywhere-services.com',
     }
 }
 
